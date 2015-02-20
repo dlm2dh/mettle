@@ -1,0 +1,21 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script><!-- load jquery -->
+    <script src="js/controllers/main.js"></script>
+    <script src="js/services/events.js"></script>
+    <script src="js/services/occurrences.js"></script>
+    <script src="js/core.js"></script>
+    <script src="telemetry.js"></script>
+  </head>
+
+  <body>
+    <input type="text" placeholder="Name"></input>
+    <button onclick="notify1()" name="First Notify">Notify on click</button>
+    <button onclick="notify2()" id="Second Notify">Notify 2</button>
+    <p ondblclick="notify3()">Notify 3</button>
+  </body>
+</html>

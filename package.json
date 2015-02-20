@@ -1,0 +1,15 @@
+{
+  "name": "Telemetry",
+  "version": "0.0.0",
+  "description": "Data analytics application",
+  "main": "server.js",
+  "scripts": {
+    "test": "Hello world",
+    "start": "node server.js"
+  },
+  "author": "Doug Milvaney",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "express": "~4.11.2"
+  }
+}
