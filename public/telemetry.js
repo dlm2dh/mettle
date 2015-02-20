@@ -40,7 +40,7 @@ $(document).ready(function() {
         var event = JSON.parse('{"name" : "' + formatEventName(getEventName(element)) + '", "type" : "' + eventAttribute + '", "element" : "' + element.nodeName + '", "target" : "'+ element.getAttribute(eventAttribute) + '" }')
         console.log(event);
         var newEvent = Events.create(event);
-        console.log(newEvent.id);
+        console.log(newEvent);
 
         // TODO bind function on event to log action in DB
         // remove "on" from eventAttribute to get event to bind

@@ -86,14 +86,15 @@ module.exports = function(router, app) {
         res.send(err);
       }
       else {
-        Occurrence.find(function(err, occurrence) {
+        res.json(occurrence);
+        /*Occurrence.find(function(err, occurrences) {
           if (err) {
             res.send(err);
           }
           else {
-            res.json(occurrence);
+            res.json(occurrences);
           }
-        });
+        });*/
       }
     });
   });
