@@ -77,7 +77,7 @@ module.exports = function(router, app) {
     });
   });
 
-  // create occurrence and send back occurrence document after creation
+  // create occurrence and send back occurrences after creation
   router.post("/api/occurrences", function(req, res) {
     Occurrence.create({
       event_id : req.body.event_id
@@ -86,15 +86,14 @@ module.exports = function(router, app) {
         res.send(err);
       }
       else {
-        res.json(occurrence);
-        /*Occurrence.find(function(err, occurrences) {
+        Occurrence.find(function(err, occurrences) {
           if (err) {
             res.send(err);
           }
           else {
             res.json(occurrences);
           }
-        });*/
+        });
       }
     });
   });
