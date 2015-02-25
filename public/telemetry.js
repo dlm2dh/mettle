@@ -37,18 +37,20 @@ $(document).ready(function() {
       element = elements[i];
       eventAttribute = eventAttributes[j];
       if (element.hasAttribute(eventAttribute)) {
-        var event = JSON.parse('{"name" : "' + formatEventName(getEventName(element)) + '", "type" : "' + eventAttribute + '", "element" : "' + element.nodeName + '", "target" : "'+ element.getAttribute(eventAttribute) + '" }')
-        console.log(event);
-        Events.create(event);
+        //var event = JSON.parse('{"name" : "' + formatEventName(getEventName(element)) + '", "type" : "' + eventAttribute + '", "element" : "' + element.nodeName + '", "target" : "'+ element.getAttribute(eventAttribute) + '" }');
+        var promise = Events.create(JSON.parse('{"name" : "' + formatEventName(getEventName(element)) + '", "type" : "' + eventAttribute + '", "element" : "' + element.nodeName + '", "target" : "'+ element.getAttribute(eventAttribute) + '" }'));
+        promise.then(function (event) {
+            console.log(event.data._id);
+        });
 
         // TODO bind function on event to log action in DB
         // remove "on" from eventAttribute to get event to bind
-        var eventToBindOn = eventAttribute.substring(2)
+        /*var eventToBindOn = eventAttribute.substring(2)
         console.log(eventToBindOn);
         $(element).on(eventToBindOn, function(event) {
           //var occurrence = JSON.parse('{"event_id" : "' + event_id + '"}');
           alert(event.type + " " + event.target.nodeName);
-        });
+        });*/
       }
     }
   }
