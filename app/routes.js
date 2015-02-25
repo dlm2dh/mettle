@@ -20,7 +20,7 @@ module.exports = function(router, app) {
     });
   });
 
-  // create event and send back all events after creation
+  // create event and send back newly created event after creation
   router.post("/api/events", function(req, res) {
     Event.create({
       name : req.body.name,
@@ -32,14 +32,15 @@ module.exports = function(router, app) {
         res.send(err);
       }
       else {
-        Event.find(function(err, events) {
+        res.json(event);
+        /*Event.find(function(err, events) {
           if (err) {
             res.send(err);
           }
           else {
             res.json(events);
           }
-        });
+        });*/
       }
     });
   });
